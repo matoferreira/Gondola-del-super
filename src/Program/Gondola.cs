@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Productos;
 
 namespace Gondola
@@ -10,14 +11,13 @@ namespace Gondola
 
         public void Reponer()
         {
-            
+
         }
-        public List<Producto> Productos
+        public ReadOnlyCollection<Producto> Productos
         {
             get 
             {
-                IList<Producto> roProductos = productos.AsReadOnly();
-                return this.roProductos; 
+                return this.productos.AsReadOnly(); 
             }
             
         }
